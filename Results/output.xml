@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20190813 17:51:56.928" generator="Robot 3.1.2 (Python 2.7.15+ on linux2)">
+<suite source="/media/andreamontes/DATA/Personal/RobotTest/Tests/tests.robot" id="s1" name="Tests">
+<test id="s1-t1" name="User is able to go to platform URL">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>http://www.amazon.com</arg>
+<arg>firefox</arg>
+</arguments>
+<msg timestamp="20190813 17:51:57.070" level="INFO">Opening browser 'firefox' to base url 'http://www.amazon.com'.</msg>
+<status status="PASS" endtime="20190813 17:52:02.006" starttime="20190813 17:51:57.070"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20190813 17:52:02.568" starttime="20190813 17:52:02.007"></status>
+</kw>
+<doc>This is some basic info about test</doc>
+<tags>
+<tag>Smoke</tag>
+</tags>
+<status status="PASS" endtime="20190813 17:52:02.569" critical="yes" starttime="20190813 17:51:57.069"></status>
+</test>
+<doc>This is robot test for ebay platform</doc>
+<status status="PASS" endtime="20190813 17:52:02.572" starttime="20190813 17:51:56.929"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">Smoke</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Tests" pass="1">Tests</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20190813 17:51:56.930" level="ERROR">Error in file '/media/andreamontes/DATA/Personal/RobotTest/Tests/tests.robot': Setting variable '' failed: Invalid variable name ''.</msg>
+</errors>
+</robot>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20190813 17:28:53.716" generator="Robot 3.1.2 (Python 2.7.15+ on linux2)">
+<suite source="/media/andreamontes/DATA/Personal/RobotTest/tests.robot" id="s1" name="Tests">
+<test id="s1-t1" name="User is able to go to platform URL">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>http://www.amazon.com</arg>
+<arg>firefox</arg>
+</arguments>
+<msg timestamp="20190813 17:28:53.886" level="INFO">Opening browser 'firefox' to base url 'http://www.amazon.com'.</msg>
+<status status="PASS" endtime="20190813 17:28:59.623" starttime="20190813 17:28:53.886"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20190813 17:29:00.435" starttime="20190813 17:28:59.624"></status>
+</kw>
+<doc>This is some basic info about test</doc>
+<tags>
+<tag>Smoke</tag>
+</tags>
+<status status="PASS" endtime="20190813 17:29:00.436" critical="yes" starttime="20190813 17:28:53.885"></status>
+</test>
+<doc>This is robot test for ebay platform</doc>
+<status status="PASS" endtime="20190813 17:29:00.437" starttime="20190813 17:28:53.717"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">Smoke</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Tests" pass="1">Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
