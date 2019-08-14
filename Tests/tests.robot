@@ -3,15 +3,30 @@ Documentation	 This is robot test for ebay platform
 Library  SeleniumLibrary
 Library  OperatingSystem
 Library  Collections
+Library  String
   
 *** Variables ***
 ${MESSAGE}  Hello, world!
 ${BROWSER}  Firefox
 ${URL}  https://www.ebay.com/
+${test}  COP $23 540.90
+${test2}
+${number}  
+${number2}=  ${12}
+${totalPrice}
 
 *** Test Cases ***
+Verify regex
+	[Documentation]
+	${test2}=  Evaluate  '${test}'.replace(' ','')
+	Log To Console  ${test2}
+	${price}=  Get Regexp Matches  ${test2}  \\d+.\\d+
+	${number}=  Convert To Number  ${price}[0]  2
+	${totalPrice}=  Evaluate  ${number} + ${number2}
+	Log To Console  ${totalPrice}
+	  
 Look for shoes in ebay
-  [Documentation]  This is some basic info about test
+  [Documentation]  List 5 first low prices shoes
 	[Tags]   Smoke
 	Log  ${MESSAGE}
 	Open Browser  ${URL}  ${BROWSER}
@@ -33,6 +48,9 @@ Look for shoes in ebay
   :FOR  ${i}  IN RANGE  1  ${count}
   \  Exit For Loop If  ${i} == 6
   \  ${text}=  Get Text  xpath=(//span[@class='s-item__price'])[${i}]
-  \  Append To List  ${pricesList}  ${text}
+  \  ${price}=  Get Regexp Matches  ${text}  \\d+.\\d+
+  \  ${number}=  Convert To Number  ${price}[0]  2
+  \  Append To List  ${pricesList}  ${number}
   Log List  ${pricesList}
+  
 	Close Browser
