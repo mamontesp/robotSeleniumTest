@@ -2,6 +2,7 @@
 Documentation	 This is robot test for ebay platform
 Library  SeleniumLibrary
 Library  OperatingSystem
+Library  Collections
   
 *** Variables ***
 ${MESSAGE}  Hello, world!
@@ -25,5 +26,13 @@ Look for shoes in ebay
   Click Button  xpath=//div[@class='srp-controls__sort srp-controls__control']//div[@id='w7']//button
   Wait Until Page Contains Element  xpath= /html/body/div[3]/div[5]/div[1]/div/div[1]/div[3]/div[1]/div/div/div/ul/li[4]/a[1]
   Click Link  xpath= /html/body/div[3]/div[5]/div[1]/div/div[1]/div[3]/div[1]/div/div/div/ul/li[4]/a[1]
-  Sleep  10s
+  Sleep  2s
+  ${count}=  Get Element Count  //div[@class='s-item__detail s-item__detail--primary']//span[@class='s-item__price']
+  Log  ${count}
+  ${pricesList}=  Create List
+  :FOR  ${i}  IN RANGE  1  ${count}
+  \  Exit For Loop If  ${i} == 6
+  \  ${text}=  Get Text  xpath=(//span[@class='s-item__price'])[${i}]
+  \  Append To List  ${pricesList}  ${text}
+  Log List  ${pricesList}
 	Close Browser
