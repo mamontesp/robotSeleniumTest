@@ -4,12 +4,13 @@ Library  SeleniumLibrary
 Library  OperatingSystem
 
 *** Variables ***
-  ${BROWSER}  firefox
-  
+${MESSAGE}  Hello, world!
+
 *** Test Cases ***
-User is able to go to platform URL
+Look for shoes in ebay
   [Documentation]  This is some basic info about test
 	[Tags]   Smoke
-	Open Browser  http://www.amazon.com  firefox
+	Log  ${MESSAGE}
+	Open Browser  https://www.ebay.com/  firefox
 	Close Browser
 
