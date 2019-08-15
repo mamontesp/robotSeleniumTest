@@ -38,7 +38,6 @@ Verify Order
 Ordered Products from Dictionary
   [Arguments]  ${dictionary}
   ${sorted}=  Get Dictionary Keys  ${dictionary}
-  Log  ${sorted}
   [return]  ${sorted}
   
 Ordered Products by Price from Dictionary
@@ -50,7 +49,13 @@ Ordered Products by Price from Dictionary
   \  ${product}=  Get Product by Price  ${dictionary}  ${prices}[${i}]
   \  Append To List  ${orderedProductsByPrice}  ${product}
   Log List  ${orderedProductsByPrice}
-  [return]  ${orderedProductsByPrice}
+  
+  ${descendentSortedProductsByPrice}=  Create List 
+  :FOR  ${i}  IN RANGE  0  5
+  \  ${item}=  Evaluate  ${4} - ${i} 
+  \  Append to List  ${descendentSortedProductsByPrice}  ${orderedProductsByPrice}[${item}]
+  Log List  ${descendentSortedProductsByPrice}
+  [return]  ${descendentSortedProductsByPrice}
 
 Get Product by Price
 	[Arguments]  ${dictionary}  ${price}
